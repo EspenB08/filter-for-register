@@ -22,16 +22,32 @@ function App() {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-    console.log(data)
-      
-
+    
   }
+  // {
+  //   console.log(data)
+  //   bedriftsData !== null
+  //     ? 
+  //     bedriftsData.map((bedriftInfo) => {
+  //         return (
+  //           <p key={bedriftInfo.code} value={bedriftInfo.code}>
+  //             {bedriftInfo._embedded.enheter.navn}
+  //           </p>
+  //         );
+  //       })
+  //     : null;
+  // }
+ 
+       
+  
 
   return (
     <>
       <KommuneListe setActiveKommune={setActiveKommune} />
-      <YearSelector setActiveYear={setActiveYear}/>
-      <button onClick={() =>handleSearch(activeKommune, activeYear)}>Search</button>
+      <YearSelector setActiveYear={setActiveYear} />
+      <button onClick={() => handleSearch(activeKommune, activeYear)}>
+        Search
+      </button>
     </>
   );
 }

@@ -14,7 +14,7 @@ function kommuneListe({setActiveKommune}) {
   }, []);
   const handleOnChange = (event) =>{
     setActiveKommune(event.target.value)
-
+console.log(kommuner)
   }
     return (
       <div className="dropdownList">
