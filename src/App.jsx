@@ -1,7 +1,6 @@
 import "./App.css";
 import KommuneListe from "./Components/Selector/KommuneSelector";
 import { YearSelector } from "./Components/Selector/YearSelector";
-import SearchFunction from "./Components/api/searchfunction";
 import { useEffect, useState } from "react";
 
 function App() {
