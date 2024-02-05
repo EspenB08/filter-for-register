@@ -22,24 +22,10 @@ function App() {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-    
   }
-  // {
-  //   console.log(data)
-  //   bedriftsData !== null
-  //     ? 
-  //     bedriftsData.map((bedriftInfo) => {
-  //         return (
-  //           <p key={bedriftInfo.code} value={bedriftInfo.code}>
-  //             {bedriftInfo._embedded.enheter.navn}
-  //           </p>
-  //         );
-  //       })
-  //     : null;
-  // }
- 
+const dataFeedback = data? data._embedded.enheter:null
        
-  
+  console.log(dataFeedback)
 
   return (
     <>
@@ -48,6 +34,24 @@ function App() {
       <button onClick={() => handleSearch(activeKommune, activeYear)}>
         Search
       </button>
+      <div>
+        {dataFeedback !== null
+          ? dataFeedback.map((kommuneInfo) => {
+              return (
+                <p
+                  key={kommuneInfo.organisasjonsnummer}
+                  value={kommuneInfo.organisasjonsnummer}
+                >
+                  Navn: {kommuneInfo.navn} <br></br>
+                  organisasjonsnummer: {kommuneInfo.organisasjonsnummer}
+                  <br></br>
+                  Stiftelsesdato: 
+                  {kommuneInfo.registreringsdatoEnhetsregisteret}
+                </p>
+              );
+            })
+          : null}
+      </div>
     </>
   );
 }
